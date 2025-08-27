@@ -157,24 +157,31 @@ let heartCount = parseInt(document.getElementById('heart-count').innerText);
 const calls = document.querySelectorAll('.calls-btn');
 let coinCount = parseInt(document.getElementById('coin-count').innerText);
 
- 
+
 
  for(const call of calls) {
     call.addEventListener('click', function() {
+
 const serviceCard = call.closest('.service-card');
 const callTitles = serviceCard.querySelector('.call-title').innerText; 
 const callNumbers = serviceCard.querySelector('.call-number').innerText;
 
 
- alert(`📞...${callTitles } ${callNumbers}`)
+        if (coinCount >= 20) {
+    coinCount -= 20;
+    document.getElementById('coin-count').innerText = coinCount;
+    alert(`📞${callTitles } ${callNumbers}`)
+} else {
+    alert(`❌ You don't have enough coins. It takes at least 20 coins to make a call.`);
+    return;
+}
 
-       if(coinCount => 20) {
-         coinCount -= 20;
-        document.getElementById('coin-count').innerText = coinCount
-       }
-       else{
-        alert('Your coin less then 20')
-       }
+
+
+ 
+
+       
+      
     })
     
  }
