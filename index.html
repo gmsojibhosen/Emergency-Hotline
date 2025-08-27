@@ -166,6 +166,7 @@ let coinCount = parseInt(document.getElementById('coin-count').innerText);
 const serviceCard = call.closest('.service-card');
 const callTitles = serviceCard.querySelector('.call-title').innerText; 
 const callNumbers = serviceCard.querySelector('.call-number').innerText;
+const date = new Date().toLocaleTimeString();
 
 // history data
 const historyParent= document.getElementById('history-parent');
@@ -176,24 +177,13 @@ div.innerHTML = `
         <p class="font-semibold text-lg inter">${callTitles}</p>
         <p class="text-[#5C5C5C] text-lg">${callNumbers }</p>
         </div>
-        <p>11:36:58 AM</p>       
+        <p>${date}</p>       
         </div>`;
 
                 
                
 
-// const historyData = [];
-// const data = {
-//     name:'National Emergency Number',
-//     number: 999,
-//     date: new Date().toLocaleDateString()
-// }
-//    historyData.push(data);
-//     console.log(historyData)
-
-
-
-        if (coinCount >= 20) {
+    if (coinCount >= 20) {
     coinCount -= 20;
     document.getElementById('coin-count').innerText = coinCount;
     alert(`📞${callTitles } ${callNumbers}`)
@@ -204,8 +194,6 @@ else {
     return;
 }
 
-
-  
     })
     
  }
