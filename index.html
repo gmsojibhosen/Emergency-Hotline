@@ -128,7 +128,7 @@
         <section id="history-parent" class="col-span-1 bg-white p-5">
             <div class=" flex items-center justify-between rounded-lg">
                 <p class="font-medium text-xl roboto"><i class="fa-regular fa-clock mr-2 "></i>Call History</p>
-                <button class="flex items-center gap-3 bg-[#00A63E] px-12 py-3 rounded-[50px] text-white font-semibold inter hover:bg-gray-400">Clear</button>
+                <button id="clear-btn" class="flex items-center gap-3 bg-[#00A63E] px-12 py-3 rounded-[50px] text-white font-semibold inter hover:bg-gray-400">Clear</button>
             </div>
 
             <!-- <div  class="flex  items-center justify-between mt-[18px] bg-[#FAFAFA] p-4">
@@ -184,23 +184,23 @@ div.innerHTML = `
                
 
     if (coinCount >= 20) {
+    alert(`📞...${callTitles } ${callNumbers}`)
     coinCount -= 20;
     document.getElementById('coin-count').innerText = coinCount;
-    alert(`📞${callTitles } ${callNumbers}`)
     historyParent.append(div)
 } 
 else {
     alert(`❌ You don't have enough coins. It takes at least 20 coins to make a call.`);
-    return;
 }
+
+document.getElementById('clear-btn').addEventListener('click', function() {
+    div.innerHTML = '';
+})
+ 
 
     })
     
  }
-
-
-
-
 </script>
 
 </div>
